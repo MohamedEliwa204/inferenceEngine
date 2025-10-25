@@ -8,22 +8,22 @@ public class DisjunctiveSyllogism implements InferenceRuleInterface {
 
     @Override
     public boolean matches(Expression exp1, Expression exp2) {
-        Expression conj = null, negated = null;
+        Expression disg = null, negated = null;
         if (exp1.isDisjunction()) {
-            conj = exp1;
+            disg = exp1;
         } else if (exp2.isDisjunction()) {
-            conj = exp2;
+            disg = exp2;
         }
         if (exp1.isLiteral() && exp1.isFirstNegated()) {
             negated = exp1;
         } else if (exp2.isLiteral() && exp2.isFirstNegated()) {
             negated = exp2;
         }
-        if (conj == null || negated == null) {
+        if (disg == null || negated == null) {
             return false;
         }
 
-        return Expression.isComplement(conj.first, negated.first) || Expression.isComplement(conj.second, negated.first);
+        return Expression.isComplement(disg.first, negated.first) || Expression.isComplement(disg.second, negated.first);
     }
 
     @Override
