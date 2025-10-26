@@ -32,12 +32,10 @@ public class Expression {
         if (first.length() == 1 && second.length() == 2) {
             normal = first;
             negated = second;
-        }
-        else if (first.length() == 2 && second.length() == 1) {
+        } else if (first.length() == 2 && second.length() == 1) {
             normal = second;
             negated = first;
-        }
-        else return false;
+        } else return false;
 
         return negated.charAt(1) == (char) normal.charAt(0);
     }
@@ -58,5 +56,13 @@ public class Expression {
         if (operand.length() == 1) return "~" + operand;
         else if (operand.length() == 2) return operand.charAt(1) + "";
         return null;
+    }
+
+    @Override
+    public String toString() {
+        if (operator == null && second == null) {
+            return first; // just a literal, like "~P"
+        }
+        return first + " " + operator + " " + second;
     }
 }
