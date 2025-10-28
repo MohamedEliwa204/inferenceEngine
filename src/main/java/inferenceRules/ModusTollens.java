@@ -26,4 +26,8 @@ public class ModusTollens implements InferenceRuleInterface {
         return null;
     }
 
+
+    public String getName() {
+        return "ModusTollens";
+    }
 }

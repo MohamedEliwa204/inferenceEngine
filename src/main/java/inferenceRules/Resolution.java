@@ -31,4 +31,8 @@ public class Resolution implements InferenceRuleInterface {
         }
         return null;
     }
+
+    public String getName() {
+        return "Resolution";
+    }
 }

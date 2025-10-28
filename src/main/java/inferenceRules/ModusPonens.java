@@ -27,4 +27,7 @@ public class ModusPonens implements InferenceRuleInterface {
         return null;
     }
 
+    public String getName() {
+        return "ModusPonens";
+    }
 }

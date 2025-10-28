@@ -35,7 +35,7 @@ public class RuleManage implements InferenceEngineInterface {
     public Expression applyRules() {
         for (InferenceRuleInterface rule : rules) {
             if (rule.matches(expressions.get(0), expressions.get(1))) {
-                r = rule.getClass().getSimpleName();
+                r = rule.getName();
                 return rule.apply(expressions.get(0), expressions.get(1));
             }
 

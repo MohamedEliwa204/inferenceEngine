@@ -41,4 +41,8 @@ public class DisjunctiveSyllogism implements InferenceRuleInterface {
         }
         return null;
     }
+
+    public String getName() {
+        return "DisjunctiveSyllogism";
+    }
 }

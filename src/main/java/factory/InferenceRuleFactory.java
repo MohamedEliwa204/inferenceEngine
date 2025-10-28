@@ -29,9 +29,10 @@ public class InferenceRuleFactory {
     }
 
     public Result solve(Expression exp1, Expression exp2) {
-        Expression exp = ruleManage.applyRules();
         ruleManage.addExpression(exp1);
         ruleManage.addExpression(exp2);
+        Expression exp = ruleManage.applyRules();
+
 
         return new Result(ruleManage.getR(), exp);
     }
